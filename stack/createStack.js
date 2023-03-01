@@ -27,23 +27,3 @@ class Stack {
         return this.items.toString()
     }
 }
-
-/**
- * stack demo
- * 十进制数字转换为二进制数字
- */
-function decimal2bin(number) {
-    let stack = new Stack()
-    let binStr = ''
-    number = Number(number)
-    while (number > 0) {
-        // 获取余数，并且压入栈中
-        stack.push(number % 2)
-        // 获取整除后的结果，作为下一次运行的数字
-        number = Math.floor(number / 2)
-    }
-    if (!stack.isEmpty()) {  // 拼接栈中的数字
-        binStr += stack.pop()
-    }
-    return binStr
-}
