@@ -1,28 +1,42 @@
 class Stack {
     constructor() {
-        this.items = []
+        this.items = [] // 定义栈存储
     }
+
     // 入栈
     push(element) {
         this.items.push(element)
     }
+
     // 出栈
     pop() {
-        return this.items.pop()
+        if (!this.isEmpty()) {
+            return this.items.pop()
+        }
+
     }
+
     // 查看栈顶元素
     peek() {
         return this.items[this.items.length - 1]
     }
+
     // 判断栈是否为空
     isEmpty() {
         return this.items.length === 0
     }
-    // 获取栈中元素的个数
+
+    // 获取栈元素个数
     size() {
         return this.items.length
     }
-    // toString方法
+
+    // 清空栈
+    clear() {
+        this.items = []
+    }
+
+    // toString 方法
     toString() {
         return this.items.toString()
     }
